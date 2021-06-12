@@ -72,7 +72,7 @@ nav {
   margin: 5px;
 }
 
-/* .intro {
+.intro {
   background: black;
   position: fixed;
   top: 0;
@@ -104,7 +104,7 @@ nav {
 .hide span {
   transform: translateY(100%);
   display: inline-block;
-} */
+}
 @media screen and (max-width: 1024px) {
   .nav-links {
     width: 50px;
