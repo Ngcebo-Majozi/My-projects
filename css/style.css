@@ -72,7 +72,7 @@ nav {
   margin: 5px;
 }
 
-.intro {
+/* .intro {
   background: black;
   position: fixed;
   top: 0;
@@ -104,7 +104,7 @@ nav {
 .hide span {
   transform: translateY(100%);
   display: inline-block;
-}
+} */
 @media screen and (max-width: 1024px) {
   .nav-links {
     width: 50px;
@@ -179,8 +179,7 @@ ul.icons li a:before {
   font-family: "Font Awesome 5 Free";
   font-weight: 400;
 }
-
-ul.icons li a:before {
+*/ ul.icons li a:before {
   color: #ffffff;
   text-shadow: 1.25px 0px 0px #c8cccf, -1.25px 0px 0px #c8cccf,
     0px 1.25px 0px #c8cccf, 0px -1.25px 0px #c8cccf;
@@ -265,24 +264,6 @@ header h1 {
   left: 40%;
   font-size: 48px;
   text-decoration: underline;
-}
-
-.personal {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-  border: solid black 3px;
-  height: auto;
-  font-size: 32px;
-  font-family: Arial, Helvetica, sans-serif;
-  color: azure;
-  padding: 5px;
-  margin: 10px;
-  border-radius: 40px;
-}
-.personal h3 {
-  color: burlywood;
-  text-decoration: underline;
-  text-transform: uppercase;
-  font-weight: bold;
 }
 
 .education {
