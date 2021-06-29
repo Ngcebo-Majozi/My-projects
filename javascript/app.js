@@ -1,13 +1,31 @@
 const navSlide = () => {
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
-
-    burger.addEventListener('click', () => {
+    const navLinks = document.querySelectorAll('.nav-links li')
+    burger.addEventListener('click', (e) => {
+        e.preventDefault()
         nav.classList.toggle('nav-active');
+
+    navLinks.forEach((link, index) => {
+        if(link.style.animation) {
+            link.style.animation = '';
+        } else {
+            link.style.animation = `navLinkFade 0.5 ease forwards ${index / 7 + 2}s`
+        }
+        
+    });  
+    burger.classList.toggle('toggle')
+    
     });
+    
 }
 
 navSlide();
+// burger toggle
+// $('.burger').click(function(){
+//     $('nav .nav-links').toggleClass("active");
+//     $('.burger').toggleClass("active");
+// })
 
 const tl = gsap.timeline({defaults:{ease: 'power1.out'}});
 

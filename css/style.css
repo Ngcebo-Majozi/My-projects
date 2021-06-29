@@ -1,13 +1,10 @@
-@import url(fontawesome-all.min.css);
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300");
-
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 body {
-  min-height: 100vh;
+  min-height: min-content;
   background: url(./images/tech.jpg) center/cover no-repeat fixed;
 }
 
@@ -70,6 +67,7 @@ nav {
   height: 3px;
   background-color: azure;
   margin: 5px;
+  transition: all 0.3s ease;
 }
 
 .intro {
@@ -121,12 +119,13 @@ nav {
     height: 92vh;
     top: 8vh;
     background-color: rgb(0, 0, 0);
+    color: #ffffff;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 50%;
     transform: translateX(100%);
-    transition: 0.5s ease-in;
+    transition: transform 0.5s ease-in;
   }
   .nav-links li {
     opacity: 0;
@@ -136,20 +135,20 @@ nav {
   }
 }
 
-.nav.active {
+.nav-active {
   transform: translateX(0%);
 }
 
 ul.icons {
-  cursor: default;
+  cursor: pointer;
   list-style: none;
   padding-left: 0;
-  margin-top: -0.675em;
+  margin-top: 0.675em;
 }
 
 ul.icons li {
-  display: inline-block;
-  padding: 0.675em 0.5em;
+  display: inline-flex;
+  padding: 0.5em;
 }
 
 ul.icons li a {
@@ -158,28 +157,26 @@ ul.icons li a {
   display: block;
   width: 3.75em;
   height: 3.75em;
-  border-radius: 100%;
+  border-radius: 50%;
   border: solid 1px #c8cccf;
   line-height: 3.75em;
   overflow: hidden;
   text-align: center;
-  text-indent: 3.75em;
+  /* text-indent: 3.75em; */
   white-space: nowrap;
 }
 
 ul.icons li a:before {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   display: inline-block;
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
   line-height: 1;
-  text-transform: none !important;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 400;
+  /* text-transform: none !important; */
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 200;
 }
-*/ ul.icons li a:before {
+ul.icons li a:before {
   color: #ffffff;
   text-shadow: 1.25px 0px 0px #c8cccf, -1.25px 0px 0px #c8cccf,
     0px 1.25px 0px #c8cccf, 0px -1.25px 0px #c8cccf;
@@ -196,7 +193,7 @@ ul.icons li a:before {
   left: 0;
   width: inherit;
   height: inherit;
-  font-size: 1.85rem;
+  font-size: 1.5rem;
   line-height: inherit;
   text-align: center;
   text-indent: 0;
@@ -207,6 +204,9 @@ ul.icons li a:hover {
 }
 
 @media screen and (max-width: 480px) {
+  body {
+    overflow-x: hidden;
+  }
   ul.icons li a:before {
     font-size: 1.5rem;
   }
@@ -218,20 +218,14 @@ ul.icons li a:hover {
   }
 
   .icon:before {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    display: inline-block;
+    display: inline-flex;
     font-style: normal;
     font-variant: normal;
     text-rendering: auto;
     line-height: 1;
     text-transform: none !important;
-    font-family: "Font Awesome 5 Free";
-    font-weight: 400;
-  }
-
-  .icon > .label {
-    display: none;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 100;
   }
 
   .icon:before {
@@ -239,22 +233,27 @@ ul.icons li a:hover {
   }
 
   .icon.solid:before {
-    font-weight: 900;
+    font-weight: 400;
   }
-
-  .icon.brands:before {
-    font-family: "Font Awesome 5 Brands";
+  footer {
+    position: fixed;
+    top: 80%;
+    left: 40%;
+    font-size: 8px;
+    transform: translate(-50%, -20%);
+    font-family: Georgia, "Times New Roman", Times, serif;
   }
 }
+
 footer {
-  position: absolute;
+  position: fixed;
   top: 80%;
   left: 50%;
-  font-size: 14px;
+  font-size: 1rem;
   transform: translate(-50%, -20%);
   font-family: Georgia, "Times New Roman", Times, serif;
-  color: black;
 }
+
 header h1 {
   color: black;
   letter-spacing: 5px;
@@ -301,4 +300,27 @@ header h1 {
   text-decoration: underline;
   text-transform: uppercase;
   font-weight: bold;
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
 }
